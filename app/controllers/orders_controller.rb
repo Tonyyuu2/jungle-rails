@@ -51,6 +51,13 @@ class OrdersController < ApplicationController
         item_price: product.price,
         total_price: product.price * quantity
       )
+      # LineItem.new(
+      #   order: order,
+      #   product: product,
+      #   quantity: quantity,
+      #   item_price: product.price,
+      #   total_price: product.price * quantity
+      # )
     end
     order.save!
     order
