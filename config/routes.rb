@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     resources :categories, except: [:edit, :update, :delete, :show]
   end
 
+
+  
+
   # resources :sessions, except: [:edit, :update, :show]
   # resources :users, except: [:edit, :update, :show, :delete]
 
