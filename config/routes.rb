@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'categories/index'
-  end
-  get 'static_pages/help'
-  get 'static_pages/faq'
   root to: 'products#index'
   
   resources :about, only: [:index]
@@ -23,6 +18,9 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, except: [:edit, :update, :delete, :show]
   end
+
+  # resources :sessions, except: [:edit, :update, :show]
+  # resources :users, except: [:edit, :update, :show, :delete]
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
