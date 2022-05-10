@@ -61,10 +61,10 @@ RSpec.describe User, type: :model do
     end
 
     it 'should return the user with valid login details' do
-      @user = User.new(first_name: 'John', last_name: 'Doe', email: 'tylerBjorn@gmail.com', password: 'password', password_confirmation: 'password')
+      @user = User.new(id: 1, first_name: 'John', last_name: 'Doe', email: 'tylerBjorn@gmail.com', password: 'password', password_confirmation: 'password')
       @user.save
       validUser = User.authenticate_with_credentials("tylerBjorn@gmail.com", "password")
-      expect(validUser.first_name).to eq('John')
+      expect(validUser).to eq(@user)
     end
 #come back to this 
   end
