@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-
+  before_action :authorize
+  
   def show
   end
 
@@ -17,6 +18,7 @@ class CartsController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
+  
   private
 
   def modify_cart_delta(product_id, delta)
